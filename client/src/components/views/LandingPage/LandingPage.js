@@ -3,7 +3,7 @@ import Axios from 'axios';
 import { Icon, Col, Card, Row } from 'antd';
 import ImageSlider from '../../utils/ImageSlider';
 import CheckBox from './Sections/CheckBox';
-// import RadioBox from './Sections/RadioBox';
+ import RadioBox from './Sections/RadioBox';
 import { continents, price } from './Sections/Datas';
 // import SearchFeature from './Sections/SearchFeature';
 
@@ -158,10 +158,10 @@ function LandingPage() {
                     />
                 </Col>
                 <Col lg={12} xs={24}>
-                    {/* <RadioBox
+                    <RadioBox
                         list={price}
                         handleFilters={filters => handleFilters(filters, "price")}
-                    /> */}
+                    />
                 </Col>
             </Row>
 
