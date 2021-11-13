@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Typography, Button, Form, message, Input, Icon } from 'antd';
-//import FileUpload from '../../utils/FileUpload'
+import FileUpload from '../../utils/FileUpload'
 import Axios from 'axios';
 
 const { Title } = Typography;
@@ -85,7 +85,7 @@ function UploadProductPage(props) {
             <Form onSubmit={onSubmit} >
 
                 {/* DropZone */}
-                {/* <FileUpload refreshFunction={updateImages} /> */}
+                <FileUpload refreshFunction={updateImages} />
 
                 <br />
                 <br />
