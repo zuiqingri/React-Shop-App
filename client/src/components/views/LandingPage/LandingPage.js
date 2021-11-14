@@ -3,9 +3,9 @@ import Axios from 'axios';
 import { Icon, Col, Card, Row } from 'antd';
 import ImageSlider from '../../utils/ImageSlider';
 import CheckBox from './Sections/CheckBox';
- import RadioBox from './Sections/RadioBox';
+import RadioBox from './Sections/RadioBox';
 import { continents, price } from './Sections/Datas';
-// import SearchFeature from './Sections/SearchFeature';
+import SearchFeature from './Sections/SearchFeature';
 
 const { Meta } = Card;
 
@@ -169,9 +169,9 @@ function LandingPage() {
             {/* Search  */}
             <div style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto' }}>
 
-                {/* <SearchFeature
+                <SearchFeature
                     refreshFunction={updateSearchTerms}
-                /> */}
+                />
 
             </div>
 
