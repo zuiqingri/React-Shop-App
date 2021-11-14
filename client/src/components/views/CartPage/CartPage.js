@@ -48,14 +48,14 @@ function CartPage(props) {
 
     const removeFromCart = (productId) => {
 
-        // dispatch(removeCartItem(productId))
-        //     .then((response) => {
-        //         if (response.payload.cartDetail.length <= 0) {
-        //             setShowTotal(false)
-        //         } else {
-        //             calculateTotal(response.payload.cartDetail)
-        //         }
-        //     })
+        dispatch(removeCartItem(productId))
+            .then((response) => {
+                if (response.payload.cartDetail.length <= 0) {
+                    setShowTotal(false)
+                } else {
+                    calculateTotal(response.payload.cartDetail)
+                }
+            })
     }
 
     const transactionSuccess = (data) => {
