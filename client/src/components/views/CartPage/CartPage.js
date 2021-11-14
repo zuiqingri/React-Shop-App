@@ -5,7 +5,7 @@ import {
     removeCartItem,
     onSuccessBuy
 } from '../../../_actions/user_actions';
-//import UserCardBlock from './Sections/UserCardBlock';
+import UserCardBlock from './Sections/UserCardBlock';
 import { Result, Empty } from 'antd';
 import Axios from 'axios';
 //import Paypal from '../../utils/Paypal';
@@ -85,10 +85,10 @@ function CartPage(props) {
             <h1>My Cart</h1>
             <div>
 
-                {/* <UserCardBlock
+                <UserCardBlock
                     products={props.user.cartDetail}
                     removeItem={removeFromCart}
-                /> */}
+                />
 
 
                 {ShowTotal ?
