@@ -8,7 +8,8 @@ import {
 import UserCardBlock from './Sections/UserCardBlock';
 import { Result, Empty } from 'antd';
 import Axios from 'axios';
-//import Paypal from '../../utils/Paypal';
+import Paypal from '../../utils/Paypal';
+
 function CartPage(props) {
     const dispatch = useDispatch();
     const [Total, setTotal] = useState(0)
@@ -69,6 +70,23 @@ function CartPage(props) {
         //             setShowTotal(false)
         //         }
         //     })
+        let variables={
+            cartDetail:props.user.cartDetail,paymentData:data
+        }
+        Axios.post('/api/users/successBuy',variables)
+        .then(response=>{
+            if(response.data.success){
+                setShowSuccess(true)
+                setShowTotal(false)
+
+                dispatch(onSuccessBuy({
+                    cart:response.data.cart,
+                    cartDetail:response.data.cartDetail
+                }))
+            } else{
+                alert('Failed to buy it')
+            }
+        })
     }
 
     const transactionError = () => {
@@ -117,7 +135,7 @@ function CartPage(props) {
 
             {/* Paypal Button */}
 
-            {/* {ShowTotal &&
+            {ShowTotal &&
 
                 <Paypal
                     toPay={Total}
@@ -126,7 +144,7 @@ function CartPage(props) {
                     transactionCanceled={transactionCanceled}
                 />
 
-            } */}
+            }
 
 
 
